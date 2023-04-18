@@ -1,0 +1,92 @@
+@use "sass:color";
+@use "./vars";
+
+html.dark {
+  .lang-switcher {
+    background-color: #373e47;
+  }
+
+  .lang-list {
+    background-color: #2d333b;
+    color: #adbac7;
+  }
+
+  .theme-button {
+    background-color: #373e47;
+    color: #adbac7;
+
+    &:not(:disabled) {
+      &:hover {
+        background-color: rgba(144, 157, 171, 0.12);
+      }
+    }
+  }
+
+  .timer {
+    background-color: #2d333b;
+
+    &__time {
+      color: #adbac7;
+    }
+  }
+
+  .timer-settings {
+    background-color: #2d333b;
+    color: #768390;
+
+    &__header,
+    &__footer {
+      border-color: #373e47;
+    }
+    &__close {
+      background-color: #373e47;
+      color: #adbac7;
+
+      &:not(:disabled) {
+        &:hover {
+          background-color: rgba(144, 157, 171, 0.12);
+        }
+      }
+    }
+  }
+
+  .sounds-list {
+    .sound-button {
+      background-color: #373e47;
+      color: #adbac7;
+
+      &.selected {
+        background-color: #316dca !important;
+        color: #adbac7;
+      }
+
+      button {
+        color: #adbac7;
+      }
+    }
+  }
+
+  .input-number {
+    &__sub,
+    &__add {
+      background: #373e47;
+      color: #adbac7;
+
+      &:disabled {
+        background: #2b3036;
+        color: #55595d;
+      }
+
+      &:not(:disabled) {
+        &:hover {
+          background-color: rgba(144, 157, 171, 0.12);
+        }
+      }
+    }
+
+    &__sub,
+    &__add {
+      border-color: #373e47;
+    }
+  }
+}

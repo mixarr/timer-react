@@ -1,0 +1,29 @@
+.theme-button {
+  display: flex;
+  padding: 12px;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #f1f1f1;
+  color: #1a1a1a;
+  font-size: 16px;
+
+  &:not(:disabled) {
+    &:hover {
+      background-color: #ededed;
+    }
+  }
+}
+
+.theme-list {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 4px;
+  border-radius: 4px;
+  list-style: none;
+
+  &_item {
+    display: flex;
+    align-items: center;
+  }
+}

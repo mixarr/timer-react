@@ -1,0 +1,51 @@
+.icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 4px;
+  font-size: 24px;
+  cursor: pointer;
+  background-color: transparent;
+  user-select: none;
+  color: var(--icon-button-color);
+
+  &:not(:disabled) {
+    &:hover {
+      background-color: var(--icon-button-background-color);
+    }
+
+    &:focus-visible {
+    }
+
+    &:active {
+    }
+  }
+
+  &.large {
+    width: 56px;
+    height: 56px;
+  }
+
+  &.medium {
+    width: 48px;
+    height: 48px;
+  }
+
+  &.small {
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+  }
+
+  &.primary {
+    background-color: var(--icon-button-background-color);
+    color: var(--icon-button-color);
+  }
+
+  &.outline {
+    color: red;
+    background-color: transparent;
+    border: 1px solid red;
+  }
+}

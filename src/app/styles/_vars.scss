@@ -1,0 +1,81 @@
+$black: #1a1a1a;
+$color1: #d3deff;
+$color2: #131b67;
+$color3: #e3d5ff;
+$color4: #452578;
+$color5: #fed4e2;
+$color6: #791d3c;
+$color7: #f7e3d0;
+$color8: #f8e4cb;
+$color9: #321800;
+
+$dark: #22272e;
+$dark2: #2d333b;
+$dark3: #373e47;
+$dark4: #768390;
+$dark5: #adbac7;
+$dark6: #316dca;
+
+:root {
+  --background-color: #f1f1f1;
+  --text-color: #22272e;
+
+  --header-background-color: #ffffff;
+  --header-text-color: #22272e;
+
+  --logotype-color: #22272e;
+
+  --footer-background-color: #ffffff;
+  --footer-text-color: #22272e;
+
+  --listbox-background-color: #fff;
+  --listbox-text-color: #22272e;
+
+  --button-background-color: #1a1a1a;
+  --button-text-color: #f5f5f5;
+  --icon-button-background-color: #f1f1f1;
+  --icon-button-color: #22272e;
+
+  --input-background-color: #f1f1f1;
+  --input-border-color: #ededed;
+  --input-text-color: #22272e;
+  --input-disabled-background-color: #fff;
+  --input-disabled-border-color: #fff;
+  --input-disabled-text-color: #fff;
+
+  --progressbar-background: #f1f1f1;
+  --progressbar-thumb: #22272e;
+}
+
+html.dark {
+  color-scheme: dark;
+
+  --background-color: #22272e;
+  --text-color: #768390;
+
+  --header-background-color: #2d333b;
+  --header-text-color: #678390;
+
+  --logotype-color: #768390;
+
+  --footer-background-color: #2d333b;
+  --footer-text-color: #768390;
+
+  --listbox-background-color: #fff;
+  --listbox-text-color: #22272e;
+
+  --button-background-color: #373e47;
+  --button-text-color: #768390;
+  --icon-button-background-color: #373e47;
+  --icon-button-color: #768390;
+
+  --input-background-color: #1c2128;
+  --input-border-color: #444c56;
+  --input-text-color: #768390;
+  --input-disabled-background-color: #fff;
+  --input-disabled-border-color: #fff;
+  --input-disabled-text-color: #fff;
+
+  --progressbar-background: #d3deff;
+  --progressbar-thumb: #316dca;
+}
