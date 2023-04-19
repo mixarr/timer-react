@@ -32,3 +32,12 @@ export const Outline: Story = {
     disabled: false,
   },
 };
+
+export const Ghost: Story = {
+  args: {
+    icon: <GithubIcon />,
+    view: "ghost",
+    size: "medium",
+    disabled: false,
+  },
+};

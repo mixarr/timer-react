@@ -17,7 +17,7 @@ interface IconButtonProps
   onClick?: () => void;
   icon: ReactNode;
   size?: "large" | "medium" | "small";
-  view?: "primary" | "outline";
+  view?: "primary" | "outline" | "ghost";
   className?: string;
 }
 

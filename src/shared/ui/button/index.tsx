@@ -15,7 +15,7 @@ interface ButtonProps
   iconLeft?: ReactNode;
   iconRight?: ReactNode;
   size?: "large" | "medium" | "small";
-  view?: "primary" | "secondary" | "outline";
+  view?: "primary" | "outline" | "ghost";
   shape?: "geometric" | "rounded" | "circular";
 }
 
@@ -27,12 +27,12 @@ export const Button = ({
   iconRight,
   size = "medium",
   view = "primary",
-  shape,
+  shape = "rounded",
   ...rest
 }: ButtonProps) => {
   return (
     <button
-      className={classNames("button", size, view)}
+      className={classNames("button", size, view, shape)}
       onClick={onClick}
       disabled={disabled}
       {...rest}

@@ -2,24 +2,10 @@
 @use "./styles/vars";
 @use "./styles/themes";
 @use "./styles/global";
+@use "./styles//variables";
 
 :root {
   color-scheme: light dark;
-
-  --font-body: "Mulish", "Anonymous Pro", "Nunito Sans", sans-serif;
-  --font-line-height: 1.3rem;
-
-  --h1-font-size: 4.209rem;
-  --h2-font-size: 3.157rem;
-  --h3-font-size: 2.369rem;
-  --h4-font-size: 1.777rem;
-  --h5-font-size: 1.333rem;
-  --h6-font-size: 1rem;
-
-  --text-small-font-size: 0.75rem;
-
-  --max-width: 14800px;
-  --gap: 1rem;
 }
 
 html {
@@ -27,7 +13,7 @@ html {
 }
 
 body {
-  font-family: var(--font-body);
+  font-family: var(--font-body, sans-serif);
   background: var(--background-color);
   color: var(--text-color);
 }

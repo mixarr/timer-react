@@ -5,8 +5,8 @@
   justify-content: center;
   gap: 8px;
   border: 0;
-  color: var(--button-text-color);
-  background-color: var(--button-background-color);
+  // color: var(--button-text-color);
+  // background-color: var(--button-background-color);
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
@@ -46,9 +46,24 @@
     border: 1px solid red;
   }
 
+  &.ghost {
+  }
+
+  &.geometric {
+    border-radius: var(--rounded-none);
+  }
+
+  &.rounded {
+    border-radius: var(--rounded-rounded) + px;
+  }
+
+  &.circular {
+    border-radius: var(--rounded-full);
+  }
+
   &:not(:disabled) {
     &:hover {
-      background-color: #f4f4f4;
+      background-color: var(--button-hover-background-color);
       color: #1a1a1a;
     }
 

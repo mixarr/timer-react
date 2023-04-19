@@ -31,3 +31,12 @@ export const Outline: Story = {
     disabled: false,
   },
 };
+
+export const Ghost: Story = {
+  args: {
+    children: "Кнопка",
+    view: "ghost",
+    size: "medium",
+    disabled: false,
+  },
+};

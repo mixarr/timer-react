@@ -1,20 +1,4 @@
-$black: #1a1a1a;
-$color1: #d3deff;
-$color2: #131b67;
-$color3: #e3d5ff;
-$color4: #452578;
-$color5: #fed4e2;
-$color6: #791d3c;
-$color7: #f7e3d0;
-$color8: #f8e4cb;
-$color9: #321800;
-
-$dark: #22272e;
-$dark2: #2d333b;
-$dark3: #373e47;
-$dark4: #768390;
-$dark5: #adbac7;
-$dark6: #316dca;
+@use "./variables";
 
 :root {
   --background-color: #f1f1f1;
@@ -31,10 +15,11 @@ $dark6: #316dca;
   --listbox-background-color: #fff;
   --listbox-text-color: #22272e;
 
-  --button-background-color: #1a1a1a;
-  --button-text-color: #f5f5f5;
-  --icon-button-background-color: #f1f1f1;
-  --icon-button-color: #22272e;
+  --button-background-color: var(--color-yellow-400);
+  --button-text-color: var(--color-yellow-900);
+  --button-hover-background-color: var(--color-yellow-300);
+  --icon-button-background-color: var(--color-yellow-50);
+  --icon-button-color: var(--color-yellow-900);
 
   --input-background-color: #f1f1f1;
   --input-border-color: #ededed;
@@ -43,8 +28,8 @@ $dark6: #316dca;
   --input-disabled-border-color: #fff;
   --input-disabled-text-color: #fff;
 
-  --progressbar-background: #f1f1f1;
-  --progressbar-thumb: #22272e;
+  --progressbar-background: var(--color-yellow-100);
+  --progressbar-thumb: var(--color-yellow-900);
 }
 
 html.dark {
