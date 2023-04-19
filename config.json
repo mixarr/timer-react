@@ -3,7 +3,7 @@
   "platforms": {
     "scss": {
       "transformGroup": "scss",
-      "buildPath": "build/scss/",
+      "buildPath": "src/app/styles/",
       "files": [
         {
           "destination": "_variables.scss",
