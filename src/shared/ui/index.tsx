@@ -5,3 +5,4 @@ export { InputNumber } from "./input";
 export { Listbox } from "./listbox";
 export { Popup } from "./popup";
 export { Progress } from "./progress";
+export { Typography } from "./typography";

@@ -62,18 +62,18 @@ export const InputNumber = ({
         {...props}
       />
       <button
-        className="input-number__sub"
-        onClick={decrement}
-        disabled={value === minValue}
-      >
-        -
-      </button>
-      <button
         className="input-number__add"
         onClick={increment}
         disabled={value >= maxValue}
       >
         +
+      </button>
+      <button
+        className="input-number__sub"
+        onClick={decrement}
+        disabled={value === minValue}
+      >
+        -
       </button>
     </div>
   );

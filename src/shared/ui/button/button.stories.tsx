@@ -5,10 +5,8 @@ import { Button } from ".";
 const meta = {
   title: "Design System/Buttons/Button",
   component: Button,
-  tags: ["button"],
-  argTypes: {
-    disabled: { type: "boolean", default: false },
-  },
+  tags: ["autodocs"],
+  argTypes: {},
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -19,6 +17,8 @@ export const Primary: Story = {
     children: "Кнопка",
     view: "primary",
     size: "medium",
+    shape: "rounded",
+    type: "button",
     disabled: false,
   },
 };
@@ -28,6 +28,8 @@ export const Outline: Story = {
     children: "Кнопка",
     view: "outline",
     size: "medium",
+    shape: "rounded",
+    type: "button",
     disabled: false,
   },
 };
@@ -37,6 +39,8 @@ export const Ghost: Story = {
     children: "Кнопка",
     view: "ghost",
     size: "medium",
+    shape: "rounded",
+    type: "button",
     disabled: false,
   },
 };

@@ -1,92 +1,99 @@
-@use "sass:color";
-@use "./vars";
+:root {
+  --background-color: var(--color-gray-50);
+  --text-color: #22272e;
+
+  --header-background-color: #ffffff;
+  --header-text-color: #22272e;
+
+  --logotype-color: #22272e;
+
+  --footer-background-color: #ffffff;
+  --footer-text-color: #22272e;
+
+  --listbox-background-color: #fff;
+  --listbox-text-color: #22272e;
+  --listbox-item-bg-hover: var(--color-gray-50);
+
+  --button-background-color: var(--color-yellow-400);
+  --button-text-color: var(--color-yellow-900);
+  --button-hover-background-color: var(--color-yellow-300);
+  --icon-button-background-color: var(--color-yellow-400);
+  --icon-button-color: var(--color-yellow-900);
+  --icon-button-ghost-bg: transparent;
+  --icon-button-ghost-bg-hover: var(--color-gray-50);
+  --icon-button-ghost-bg-active: var(--color-gray-100);
+
+  --input-background-color: var(--color-gray-50);
+  --input-border-color: var(--color-gray-100);
+  --input-text-color: #22272e;
+  --input-button-bg: var(--color-gray-50);
+  --input-button-bg-hover: var(--color-gray-100);
+  --input-button-bg-disabled: var(--color-gray-300);
+  --input-button-text-disabled: var(--color-gray-400);
+
+  --progressbar-background: var(--color-gray-100);
+  --progressbar-thumb: var(--color-black);
+
+  --timer-background-color: var(--color-white);
+
+  --color-text: var(--color-black);
+  --color-border: var(--color-gray-200);
+  --color-theme-button: transparent;
+  --color-theme-button-hover: var(--color-gray-50);
+  --color-theme-button-active: var(--color-gray-200);
+
+  --color-sound-button-bg: var(--color-gray-50);
+  --color-sound-button-text: var(--color-black);
+  --color-sound-button-bg-select: var(--color-yellow-200);
+  --color-sound-button-text-select: var(--color-black);
+}
 
 html.dark {
-  .lang-switcher {
-    background-color: #373e47;
-  }
+  color-scheme: dark;
 
-  .lang-list {
-    background-color: #2d333b;
-    color: #adbac7;
-  }
+  --background-color: #22272e;
+  --text-color: #768390;
 
-  .theme-button {
-    background-color: #373e47;
-    color: #adbac7;
+  --header-background-color: #2d333b;
+  --header-text-color: #678390;
 
-    &:not(:disabled) {
-      &:hover {
-        background-color: rgba(144, 157, 171, 0.12);
-      }
-    }
-  }
+  --logotype-color: #768390;
 
-  .timer {
-    background-color: #2d333b;
+  --footer-background-color: #2d333b;
+  --footer-text-color: #768390;
 
-    &__time {
-      color: #adbac7;
-    }
-  }
+  --listbox-background-color: #2d333b;
+  --listbox-text-color: #768390;
+  --listbox-item-bg-hover: #373e47;
 
-  .timer-settings {
-    background-color: #2d333b;
-    color: #768390;
+  --button-background-color: #373e47;
+  --button-text-color: #768390;
+  --icon-button-background-color: #373e47;
+  --icon-button-color: #768390;
+  --icon-button-ghost-bg-hover: #373e47;
+  --icon-button-ghost-bg-active: #3d454f;
 
-    &__header,
-    &__footer {
-      border-color: #373e47;
-    }
-    &__close {
-      background-color: #373e47;
-      color: #adbac7;
+  --input-background-color: #1c2128;
+  --input-border-color: #444c56;
+  --input-text-color: #768390;
+  --input-button-bg: #1c2128;
+  --input-button-bg-hover: #2a3039;
+  --input-button-bg-disabled: #1c2128;
+  --input-button-text-disabled: #768390;
 
-      &:not(:disabled) {
-        &:hover {
-          background-color: rgba(144, 157, 171, 0.12);
-        }
-      }
-    }
-  }
+  --progressbar-background: #d3deff;
+  --progressbar-thumb: #316dca;
 
-  .sounds-list {
-    .sound-button {
-      background-color: #373e47;
-      color: #adbac7;
+  --timer-background-color: #2d333b;
 
-      &.selected {
-        background-color: #316dca !important;
-        color: #adbac7;
-      }
+  --color-text: #768390;
+  --color-border: #768390;
+  --color-theme-button: transparent;
+  --color-theme-button-hover: #373e47;
+  --color-theme-button-active: #1c2128;
 
-      button {
-        color: #adbac7;
-      }
-    }
-  }
-
-  .input-number {
-    &__sub,
-    &__add {
-      background: #373e47;
-      color: #adbac7;
-
-      &:disabled {
-        background: #2b3036;
-        color: #55595d;
-      }
-
-      &:not(:disabled) {
-        &:hover {
-          background-color: rgba(144, 157, 171, 0.12);
-        }
-      }
-    }
-
-    &__sub,
-    &__add {
-      border-color: #373e47;
-    }
-  }
+  --color-sound-button-bg: #373e47;
+  --color-sound-button-text: #768390;
+  --color-sound-button-bg-select: var(--color-blue-500);
+  --color-sound-button-text-select: var(--color-black);
 }

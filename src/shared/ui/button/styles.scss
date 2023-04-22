@@ -5,15 +5,13 @@
   justify-content: center;
   gap: 8px;
   border: 0;
-  // color: var(--button-text-color);
-  // background-color: var(--button-background-color);
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
   cursor: pointer;
   user-select: none;
   border-radius: 4px;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 
   &.large {
     padding: 0px 16px;
@@ -38,33 +36,29 @@
   &.primary {
     color: var(--button-text-color);
     background-color: var(--button-background-color);
+
+    &:hover:enabled {
+      filter: brightness(0.95);
+    }
+
+    &:focus-visible {
+      outline: 2px dashed #e737a3;
+      outline-offset: 2px;
+    }
+
+    &:active:enabled {
+      filter: brightness(0.9);
+    }
   }
 
   &.outline {
-    color: red;
     background-color: transparent;
-    border: 1px solid red;
-  }
+    color: var(--color-yellow-900);
+    background-color: transparent;
+    border: 1px solid var(--color-yellow-900);
 
-  &.ghost {
-  }
-
-  &.geometric {
-    border-radius: var(--rounded-none);
-  }
-
-  &.rounded {
-    border-radius: var(--rounded-rounded) + px;
-  }
-
-  &.circular {
-    border-radius: var(--rounded-full);
-  }
-
-  &:not(:disabled) {
-    &:hover {
-      background-color: var(--button-hover-background-color);
-      color: #1a1a1a;
+    &:hover:enabled {
+      background-color: var(--color-yellow-100);
     }
 
     &:focus-visible {
@@ -72,15 +66,43 @@
       outline-offset: 2px;
     }
 
-    &:active {
-      background-color: #e8e8ee;
-      color: #1a1a1a;
+    &:active:enabled {
+      background-color: var(--color-yellow-200);
     }
   }
 
+  &.ghost {
+    background-color: transparent;
+
+    &:hover:enabled {
+      background-color: var(--color-yellow-100);
+    }
+
+    &:focus-visible {
+      outline: 2px solid #e737a3;
+      outline-offset: 2px;
+    }
+
+    &:active:enabled {
+      background-color: var(--color-yellow-200);
+    }
+  }
+
+  &.geometric {
+    border-radius: var(--rounded-none);
+  }
+
+  &.rounded {
+    border-radius: var(--rounded-md);
+  }
+
+  &.circular {
+    border-radius: var(--rounded-full);
+  }
+
   &:disabled {
-    background-color: #ebebeb !important;
-    color: #bebebe !important;
+    background-color: var(--color-gray-60) !important;
+    color: var(--color-gray-100) !important;
     cursor: default;
   }
 }

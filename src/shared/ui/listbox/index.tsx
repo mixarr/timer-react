@@ -10,9 +10,11 @@ export const Listbox = ({ items }: ListboxProps) => {
   }
 
   return (
-    <ul>
+    <ul className="listbox">
       {items.map((item, index) => (
-        <li key={index}>{item}</li>
+        <li className="listbox__item" key={index}>
+          {item}
+        </li>
       ))}
     </ul>
   );

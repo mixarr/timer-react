@@ -1,6 +1,7 @@
 .header {
   padding: 16px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   column-gap: 16px;
@@ -10,15 +11,23 @@
 .logotype {
   display: flex;
   align-items: center;
+  justify-content: center;
   column-gap: 8px;
+  flex: 1;
+  min-width: 170px;
 
   h1 {
     display: inline-block;
     font-size: 20px;
-    color: var(--logotype-color);
+    color: var(--color-text);
   }
 
   img {
     max-width: 24px;
+  }
+
+  @media (min-width: 528px) {
+    flex: auto;
+    min-width: min-content;
   }
 }

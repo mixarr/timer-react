@@ -3,7 +3,7 @@ import { ChangeEvent } from "react";
 import { Duration, Sound } from "../types";
 
 import { useTranslation } from "react-i18next";
-import { Button, IconButton, InputNumber } from "shared/ui";
+import { Button, IconButton, InputNumber, Typography } from "shared/ui";
 import { CloseIcon, SoundIcon } from "shared/ui/icons";
 
 interface SoundButtonProps {
@@ -70,104 +70,115 @@ export const TimerSettings = ({
       onClick={(event) => event.stopPropagation()}
     >
       <div className="timer-settings__header">
-        <h2 className="timer-settings__title">{t("timer.title")}</h2>
-        <IconButton onClick={close} icon={<CloseIcon />} />
+        <Typography as="h3" variant="h3" className="timer-settings__title">
+          {t("timer.title")}
+        </Typography>
+        <IconButton view="ghost" onClick={close} icon={<CloseIcon />} />
       </div>
 
       <div className="timer-settings__content">
-        <h3>{t("timer.fields.title")}</h3>
-        <div className="timer-settings__fields">
-          <label>
-            <span>{t("timer.fields.hours")}</span>
-            <InputNumber
-              minValue={0}
-              value={duration.hours}
-              increment={() =>
-                setNewDuration({
-                  ...duration,
-                  hours: duration.hours + 1,
-                })
-              }
-              decrement={() =>
-                setNewDuration({
-                  ...duration,
-                  hours: duration.hours - 1,
-                })
-              }
-              onChange={(event) =>
-                setNewDuration({
-                  ...duration,
-                  hours: +event.currentTarget.value,
-                })
-              }
-            />
-          </label>
-          <label>
-            <span>{t("timer.fields.minutes")}</span>
-            <InputNumber
-              minValue={0}
-              maxValue={59}
-              value={duration.minutes}
-              increment={() =>
-                setNewDuration({
-                  ...duration,
-                  minutes: duration.minutes + 1,
-                })
-              }
-              decrement={() =>
-                setNewDuration({
-                  ...duration,
-                  minutes: duration.minutes - 1,
-                })
-              }
-              onChange={(event) =>
-                setNewDuration({
-                  ...duration,
-                  minutes: +event.currentTarget.value,
-                })
-              }
-            />
-          </label>
-          <label>
-            <span>{t("timer.fields.seconds")}</span>
-            <InputNumber
-              minValue={0}
-              maxValue={59}
-              value={duration.seconds}
-              increment={() =>
-                setNewDuration({
-                  ...duration,
-                  seconds: duration.seconds + 1,
-                })
-              }
-              decrement={() =>
-                setNewDuration({
-                  ...duration,
-                  seconds: duration.seconds - 1,
-                })
-              }
-              onChange={(event) =>
-                setNewDuration({
-                  ...duration,
-                  seconds: +event.currentTarget.value,
-                })
-              }
-            />
-          </label>
-        </div>
-        <h3>{t("timer.sounds.title")}</h3>
-        <ul className="sounds-list">
-          {sounds.map((item) => (
-            <li className="sounds-list__item" key={item.id}>
-              <SoundButton
-                name={item.label}
-                value={item.sound}
-                checked={selectedSound === item.sound}
-                onChange={(event) => setNewSound(event.currentTarget.value)}
+        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+          <Typography as="h5" variant="h4">
+            {t("timer.fields.title")}
+          </Typography>
+          <div className="timer-settings__fields">
+            <label>
+              <span>{t("timer.fields.hours")}</span>
+              <InputNumber
+                minValue={0}
+                value={duration.hours}
+                increment={() =>
+                  setNewDuration({
+                    ...duration,
+                    hours: duration.hours + 1,
+                  })
+                }
+                decrement={() =>
+                  setNewDuration({
+                    ...duration,
+                    hours: duration.hours - 1,
+                  })
+                }
+                onChange={(event) =>
+                  setNewDuration({
+                    ...duration,
+                    hours: +event.currentTarget.value,
+                  })
+                }
               />
-            </li>
-          ))}
-        </ul>
+            </label>
+            <label>
+              <span>{t("timer.fields.minutes")}</span>
+              <InputNumber
+                minValue={0}
+                maxValue={59}
+                value={duration.minutes}
+                increment={() =>
+                  setNewDuration({
+                    ...duration,
+                    minutes: duration.minutes + 1,
+                  })
+                }
+                decrement={() =>
+                  setNewDuration({
+                    ...duration,
+                    minutes: duration.minutes - 1,
+                  })
+                }
+                onChange={(event) =>
+                  setNewDuration({
+                    ...duration,
+                    minutes: +event.currentTarget.value,
+                  })
+                }
+              />
+            </label>
+            <label>
+              <span>{t("timer.fields.seconds")}</span>
+              <InputNumber
+                minValue={0}
+                maxValue={59}
+                value={duration.seconds}
+                increment={() =>
+                  setNewDuration({
+                    ...duration,
+                    seconds: duration.seconds + 1,
+                  })
+                }
+                decrement={() =>
+                  setNewDuration({
+                    ...duration,
+                    seconds: duration.seconds - 1,
+                  })
+                }
+                onChange={(event) =>
+                  setNewDuration({
+                    ...duration,
+                    seconds: +event.currentTarget.value,
+                  })
+                }
+              />
+            </label>
+          </div>
+        </div>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+          <Typography as="h5" variant="h4">
+            {t("timer.sounds.title")}
+          </Typography>
+          <ul className="sounds-list">
+            {sounds.map((item) => (
+              <li className="sounds-list__item" key={item.id}>
+                <SoundButton
+                  name={item.label}
+                  value={item.sound}
+                  checked={selectedSound === item.sound}
+                  onChange={(event) => setNewSound(event.currentTarget.value)}
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
 
       <div className="timer-settings__footer">

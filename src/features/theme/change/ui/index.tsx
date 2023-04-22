@@ -2,10 +2,8 @@ import { CSSProperties, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { useTheme } from "shared/theme/useContext";
-import { MoonIcon, SunIcon } from "shared/ui/icons";
-
-import { IconButton, Popup } from "shared/ui";
-import { MonitorIcon } from "shared/ui/icons/monitor";
+import { Popup, Typography } from "shared/ui";
+import { MonitorIcon, MoonIcon, SunIcon } from "shared/ui/icons";
 
 import "./styles.scss";
 
@@ -16,67 +14,105 @@ export const ThemeSwitcher = () => {
 
   const [popupOpen, setOpen] = useState(false);
 
-  const themes = [
-    {
-      name: "light",
-      icon: <SunIcon />,
-    },
-    {
-      name: "dark",
-      icon: <MoonIcon />,
-    },
-    {
-      name: "system",
-      icon: <MonitorIcon />,
-    },
-  ];
-
   const ref = useRef<HTMLButtonElement>(null);
 
   const getAbsolutePosition = (): CSSProperties => ({
     position: "absolute",
-    top: ref.current ? ref.current?.offsetHeight + 24 : 0,
+    top: ref.current ? ref.current?.offsetHeight + 8 : 0,
     right: 0 + 16,
   });
 
   return (
     <>
-      <IconButton
-        //className="theme-button"
+      <div className="theme-switcher">
+        <button
+          className={
+            theme === "light"
+              ? `theme-switcher__button active`
+              : `theme-switcher__button`
+          }
+          onClick={() => setTheme("light")}
+        >
+          {t("theme.light")}
+        </button>
+        <button
+          className={
+            theme === "system"
+              ? `theme-switcher__button active`
+              : `theme-switcher__button`
+          }
+          onClick={() => setTheme("system")}
+        >
+          {t("theme.system")}
+        </button>
+        <button
+          className={
+            theme === "dark"
+              ? `theme-switcher__button active`
+              : `theme-switcher__button`
+          }
+          onClick={() => setTheme("dark")}
+        >
+          {t("theme.dark")}
+        </button>
+      </div>
+
+      {/* <IconButton
+        view="ghost"
         onClick={() => setOpen(!popupOpen)}
         aria-haspopup={"listbox"}
         aria-expanded={popupOpen}
         ref={ref}
-        icon={theme === "light" ? <SunIcon /> : <MoonIcon />}
-      />
-      <Popup isVisible={popupOpen} id="theme-popup">
-        <ul className="bg-white p-4 rounded-2xl" style={getAbsolutePosition()}>
+        icon={
+          theme === "dark" ||
+          window.matchMedia("(prefers-color-scheme: dark)").matches ? (
+            <MoonIcon />
+          ) : (
+            <SunIcon />
+          )
+        }
+      /> */}
+      <Popup
+        isVisible={popupOpen}
+        id="theme-popup"
+        closePopup={() => setOpen(false)}
+      >
+        <ul className="listbox" style={getAbsolutePosition()}>
           <li
-            className="cursor-pointer flex items-center gap-1 text-black p-1 hover:bg-slate-300 rounded-md"
+            className="listbox__item"
             onClick={() => {
               setTheme("light");
               setOpen(!popupOpen);
             }}
           >
-            <SunIcon /> <span>{t("theme.light")}</span>
+            <SunIcon />
+            <Typography as="span" variant="body2">
+              {t("theme.light")}
+            </Typography>
           </li>
           <li
-            className="cursor-pointer flex items-center gap-1 text-black p-1 hover:bg-slate-300 rounded-md"
+            className="listbox__item"
             onClick={() => {
               setTheme("dark");
               setOpen(!popupOpen);
             }}
           >
-            <MoonIcon /> <span>{t("theme.dark")}</span>
+            <MoonIcon />{" "}
+            <Typography as="span" variant="body2">
+              {t("theme.dark")}
+            </Typography>
           </li>
           <li
-            className="cursor-pointer flex items-center gap-1 text-black p-1 hover:bg-slate-300 rounded-md"
+            className="listbox__item"
             onClick={() => {
               setTheme("system");
               setOpen(!popupOpen);
             }}
           >
-            <MonitorIcon /> <span>{t("theme.system")}</span>
+            <MonitorIcon />{" "}
+            <Typography as="span" variant="body2">
+              {t("theme.system")}
+            </Typography>
           </li>
         </ul>
       </Popup>

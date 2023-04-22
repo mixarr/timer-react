@@ -27,8 +27,6 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
     (localStorage.getItem("theme") as Theme) || "system"
   );
 
-  useEffect(() => {}, []);
-
   function checkMatchMedia() {
     if (
       localStorage.theme === "dark" ||

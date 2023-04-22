@@ -6,7 +6,6 @@ import { Duration, Sound } from "../types";
 import { TimerSettings } from "./timer-settings";
 
 import { Button, Popup, Progress } from "shared/ui";
-import { SettingsIcon } from "shared/ui/icons";
 
 import "../styles.scss";
 
@@ -64,15 +63,13 @@ export const Timer = (props: TimerProps) => {
             {isRunning ? t("timer.actions.stop") : t("timer.actions.play")}
           </Button>
           <Button onClick={reset}>{t("timer.actions.reset")}</Button>
-          <Button onClick={showPopup} iconLeft={<SettingsIcon />}>
-            Settings
-          </Button>
+          <Button onClick={showPopup}>{t("timer.actions.settings")}</Button>
         </div>
 
         <audio ref={audioRef} src={props.selectedSound} loop={false} />
       </div>
 
-      <Popup isVisible={isOpen} onClick={hidePopup}>
+      <Popup isVisible={isOpen} closePopup={() => console.log("x")}>
         <TimerSettings
           duration={props.duration}
           setNewDuration={props.setNewDuration}
@@ -80,7 +77,7 @@ export const Timer = (props: TimerProps) => {
           selectedSound={props.selectedSound!}
           setNewSound={props.setNewSound}
           updateTimer={reset}
-          close={hidePopup}
+          close={() => setOpen(false)}
         />
       </Popup>
     </>

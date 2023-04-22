@@ -32,6 +32,7 @@ export const en = {
         stop: "Stop",
         reset: "Reset",
         save: "Save",
+        settings: "Settings",
       },
     },
 

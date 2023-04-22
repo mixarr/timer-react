@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 19 Apr 2023 14:48:34 GMT
+ * Generated on Thu, 20 Apr 2023 18:58:54 GMT
  */
 
 :root {
@@ -10,20 +10,6 @@
   --space-lg: 16;
   --color-white: #ffffff;
   --color-black: #000000;
-  --color-gray-50: #f5f5f5;
-  --color-gray-60: #ebebeb;
-  --color-gray-70: #e0e0e0;
-  --color-gray-80: #d6d6d6;
-  --color-gray-90: #c2c2c2;
-  --color-gray-100: #adadad;
-  --color-gray-200: #999999;
-  --color-gray-300: #7b7b7b;
-  --color-gray-400: #5e5e5e;
-  --color-gray-500: #404040;
-  --color-gray-600: #313131;
-  --color-gray-700: #232323;
-  --color-gray-800: #141414;
-  --color-gray-900: #050505;
   --color-green-50: #f5fff5;
   --color-green-100: #d7ffd8;
   --color-green-200: #b9ffbc;
@@ -84,7 +70,42 @@
   --color-pink-700: #9b3054;
   --color-pink-800: #791d3c;
   --color-pink-900: #570f27;
+  --color-gray-50: #f5f5f5;
+  --color-gray-100: #ebebeb;
+  --color-gray-200: #e0e0e0;
+  --color-gray-300: #d6d6d6;
+  --color-gray-400: #c2c2c2;
+  --color-gray-500: #adadad;
+  --color-gray-600: #999999;
+  --color-gray-700: #7b7b7b;
+  --color-gray-800: #5e5e5e;
+  --color-gray-900: #404040;
   --rounded-none: 0;
-  --rounded-rounded: 8;
-  --rounded-full: 100%;
+  --rounded-md: 8px;
+  --rounded-full: 40px;
+  --font-family-base: "Nunito Sans", sans-serif;
+  --font-size-base: 16px;
+  --font-line-height-base: 24px;
+  --font-size-h1: 48px;
+  --font-size-h2: 40px;
+  --font-size-h3: 32px;
+  --font-size-h4: 24px;
+  --font-size-h5: 18px;
+  --font-line-height-h1: 120%;
+  --font-line-height-h2: 120%;
+  --font-line-height-h3: 120%;
+  --font-line-height-h4: 120%;
+  --font-line-height-h5: 120%;
+  --font-size-body1: 18px;
+  --font-size-body2: 16px;
+  --font-size-body3: 14px;
+  --font-line-height-body1: 140%;
+  --font-line-height-body2: 140%;
+  --font-line-height-body3: 140%;
+  --font-size-caption1: 14px;
+  --font-size-caption2: 12px;
+  --font-size-caption3: 10px;
+  --font-line-height-caption1: 20px;
+  --font-line-height-caption2: 18px;
+  --font-line-height-caption3: 16px;
 }

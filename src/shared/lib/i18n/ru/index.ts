@@ -32,6 +32,7 @@ export const ru = {
         stop: "Стоп",
         reset: "Сбросить",
         save: "Сохранить",
+        settings: "Настройки",
       },
     },
 

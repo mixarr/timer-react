@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-import { IconButton, Popup } from "shared/ui";
+import { IconButton, Popup, Typography } from "shared/ui";
 import { EnIcon, RuIcon } from "shared/ui/icons";
 
 import { useTranslation } from "react-i18next";
@@ -49,29 +49,31 @@ export const LanguageSwitcher = () => {
   return (
     <>
       <IconButton
+        view="ghost"
         onClick={toggle}
         ref={buttonRef}
         icon={lang === "en" ? <EnIcon /> : <RuIcon />}
       />
-
-      <Popup isVisible={open}>
+      <Popup isVisible={open} closePopup={() => setOpen(false)}>
         <ul
           className="lang-list"
           style={{
             position: "absolute",
-            top: buttonRef.current ? buttonRef.current?.offsetHeight + 24 : 0,
+            top: buttonRef.current ? buttonRef.current?.offsetHeight + 0 : 0,
             left: buttonRef.current?.offsetLeft,
           }}
         >
-          <li className="lang-list__item">
-            <div onClick={() => toggleLanguage("en")} style={{ padding: 8 }}>
-              <EnIcon /> {t("languages.en")}
-            </div>
+          <li className="lang-list__item" onClick={() => toggleLanguage("en")}>
+            <EnIcon />
+            <Typography as="span" variant="body2">
+              {t("languages.en")}
+            </Typography>
           </li>
-          <li className="lang-list__item">
-            <div onClick={() => toggleLanguage("ru")} style={{ padding: 8 }}>
-              <RuIcon /> {t("languages.ru")}
-            </div>
+          <li className="lang-list__item" onClick={() => toggleLanguage("ru")}>
+            <RuIcon />
+            <Typography as="span" variant="body2">
+              {t("languages.ru")}
+            </Typography>
           </li>
         </ul>
       </Popup>
